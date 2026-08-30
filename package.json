@@ -1,0 +1,12 @@
+{
+  "name": "url-shortener",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Git-based URL shortener using static redirects, built via GitHub Actions and edited through Sveltia CMS.",
+  "scripts": {
+    "build": "node scripts/build-redirects.js"
+  },
+  "dependencies": {
+    "js-yaml": "^4.3.2"
+  }
+}

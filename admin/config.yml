@@ -1,0 +1,22 @@
+backend:
+  name: github
+  repo: yourname/your-repo   # <-- change this to your GitHub repo (owner/name)
+  branch: main
+  base_url: https://your-oauth-worker.your-subdomain.workers.dev  # <-- your OAuth proxy URL
+  auth_endpoint: auth
+
+media_folder: "public/media"
+public_folder: "/media"
+
+collections:
+  - name: "links"
+    label: "Short Links"
+    folder: "links"
+    create: true
+    slug: "{{fields.slug}}"
+    identifier_field: slug
+    fields:
+      - { label: "Slug", name: "slug", widget: "string", hint: "The short code, e.g. 'abc123' for go.yoursite.com/abc123" }
+      - { label: "Destination URL", name: "url", widget: "string" }
+      - { label: "Created", name: "date", widget: "datetime", default: "" }
+      - { label: "Notes", name: "notes", widget: "text", required: false }
